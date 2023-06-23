@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.Management.service.abstracts.AuthService;
 import com.example.Management.service.requests.LoginDto;
 import com.example.Management.service.requests.RequestDto;
 import com.example.Management.service.responses.AuthResponseDto;
@@ -46,10 +47,6 @@ public class AuthController {
 	}
 	
 
-	@GetMapping("/getRole")
-	public List<SimpleGrantedAuthority> getRole(@RequestHeader("Authorization") String authorizationHeader) {
-
-		return authService.getRole(authorizationHeader);
-	}
+	
 
 }
