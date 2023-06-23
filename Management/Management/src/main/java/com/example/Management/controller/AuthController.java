@@ -27,26 +27,20 @@ public class AuthController {
 	@Autowired
 	private AuthService authService;
 
-	
-
 	@PostMapping("login")
 	public ResponseEntity<AuthResponseDto> login(@RequestBody LoginDto loginDto) {
 
-		
 		AuthResponseDto authResponseDto = authService.login(loginDto);
-		
+
 		return new ResponseEntity<>(authResponseDto, HttpStatus.OK);
 	}
 
 	@PostMapping("register")
 	public String register(@RequestBody RequestDto requestDto) {
-		
+
 		String result = authService.register(requestDto);
 		return result;
 
 	}
-	
-
-	
 
 }
