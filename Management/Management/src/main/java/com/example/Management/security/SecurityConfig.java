@@ -37,6 +37,7 @@ public class SecurityConfig {
 		    .requestMatchers("/api/auth/**").permitAll()
 		    .requestMatchers("api/teachers/**").hasRole("TEACHER")
 		    .requestMatchers("api/students/**").hasRole("STUDENT")
+		    .requestMatchers("api/moderators/**").hasRole("MODERATOR")
 		    .anyRequest().authenticated()
 		    .and()
 		    .httpBasic();
